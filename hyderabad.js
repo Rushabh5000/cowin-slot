@@ -35,22 +35,22 @@ function getSlotDetails() {
      </tr>
    </thead>
    <tbody>`);
-    file = 'responseNoSlots.json';
-    fetch(file)
-        .then(response => response.json())
-        .then(jsonResponse => {
-            var data = jsonResponse.centers;
-
-    // return axios({
-    //     "method": "GET",
-    //     "url": `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=395&date=${date}`,
-    //     "headers": {
-    //         "content-type": "application/json",
-    //         "accept": "application/json"
-    //     }
-    // })
-    //     .then((response) => {
-    //         var data = response.data.centers;
+    // file = 'responseNoSlots.json';
+    // fetch(file)
+    //     .then(response => response.json())
+    //     .then(jsonResponse => {
+    //         var data = jsonResponse.centers;
+    
+    return axios({
+        "method": "GET",
+        "url": `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=581&date=${date}`,
+        "headers": {
+            "content-type": "application/json",
+            "accept": "application/json"
+        }
+    })
+        .then((response) => {
+            var data = response.data.centers;
             console.log(data);
             var chk = 0;
             if (data) {
