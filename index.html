@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -17,7 +17,14 @@
       <h2>Vaccine Slot Availability Checker</h2>
       <div style="overflow: hidden;">
          <p style="float: left;">
-            <script> document.write(new Date().toLocaleDateString('EN-IN'));</script> &nbsp;
+            <script> document.write(new Date().toLocaleDateString('EN-IN') + ' - ');
+               Date.prototype.addDays = function (days) {
+                  var date = new Date(this.valueOf());
+                  date.setDate(date.getDate() + days);
+                  return date;
+               }
+               var date = new Date();
+               document.write(date.addDays(6).toLocaleDateString('EN-IN'));</script> &nbsp;
          </p>
          <p style="float: left;">|&nbsp; Mumbai</p>
       </div>
@@ -37,4 +44,5 @@
    </center>
 </div>
 <script src="API_Vaccination.js"></script>
+
 </html>
