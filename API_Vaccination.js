@@ -17,12 +17,12 @@ StringBuilder.prototype.toString = function () {
 function getSlotDetails() {
     var date = new Date();
     var dd = String(date.getDate()).padStart(2, '0');
-    var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!	
+    var mm = String(date.getMonth() + 1).padStart(2, '0');	
     var yyyy = date.getFullYear();
     date = dd + '-' + mm + '-' + yyyy;
     var sb = new StringBuilder();
     sb.append(`<div class="table-responsive">	
-<table class="table  table-bordered table-striped table-hover">	
+<table class="table  table-bordered table-striped table-hover" id="myTable">	
 <thead >
     <tr>
        <th>#</th>
@@ -55,7 +55,7 @@ function getSlotDetails() {
             var chk = 0;
             if (data) {
                 for (var i = 0; i < data.length; i++) {
-                    var serial = '<tr> <th scope="row">' + i + 1 + '</th>';
+                    var serial = '<tr> <th scope="row">' + (i + 1) + '</th>';
                     var name = '<td>' + data[i].name + '</td>';
                     var pincode = '<td>' + data[i].pincode + '</td>';
                     var fee_type = '<td>' + data[i].fee_type + '</td>';
